@@ -1,0 +1,29 @@
+Username Enumeration via Subtly Different Responses
+
+This lab from the PortSwigger Web Security Academy demonstrates how small differences in authentication error
+messages can lead to username enumeration and eventually allow an attacker to brute-force a user’s password. 
+The application’s login functionality returns slightly different responses depending on whether the username 
+exists or not. Although the error message appears almost identical to a human user, subtle differences such
+as an extra space or punctuation can reveal whether a username is valid.
+
+To begin the attack, a login request is captured using Burp Suite. An invalid username and password are submitted
+to observe the structure of the POST /login request. The username parameter is then sent to the Intruder tool for
+
+automated testing. Using the candidate username wordlist, multiple login requests are sent to the server with 
+different usernames while keeping the password constant. During the attack, the Grep-Extract feature is used to
+extract the error message returned in the response. Once the attack finishes, the responses are analyzed to
+identify any small variation in the error message. One of the responses contains a slightly different message—for example,
+a trailing space instead of a period—which indicates that the supplied username exists in the system.
+
+After identifying a valid username, the attacker proceeds to the second stage: password brute-forcing. The discovered 
+username is fixed in the request, and the payload position is moved to the password parameter. A password wordlist is
+then used to send multiple login attempts automatically. While reviewing the results, a successful login attempt can
+be identified by a different HTTP response, typically a 302 redirect, which indicates that authentication succeeded.
+The corresponding password is then used together with the valid username to log into the application and access the
+user’s account page, successfully completing the lab.
+
+This vulnerability highlights a common security mistake where applications provide inconsistent authentication responses.
+Even minor differences in response text, status codes, response length, or timing can allow attackers to systematically
+discover valid usernames and perform targeted password attacks. To prevent this issue, developers should ensure that login
+systems always return identical responses and response times for both valid and invalid usernames, thereby eliminating any
+information leakage during the authentication process.

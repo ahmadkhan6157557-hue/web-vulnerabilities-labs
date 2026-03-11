@@ -4,7 +4,8 @@ Authentication vulnerabilities
 
 Conceptually, authentication vulnerabilities are easy to understand. However, they are usually critical because of the clear relationship between authentication and security.
 
-Authentication vulnerabilities can allow attackers to gain access to sensitive data and functionality. They also expose additional attack surface further exploits. For this reason, it's important to learn how to identify and exploit authentication vulnerabilities, and how to bypass common protection measures.
+Authentication vulnerabilities can allow attackers to gain access to sensitive data and functionality. They also expose additional attack surface further exploits. For this reason, it's important to learn how to identify and exploit
+authentication vulnerabilities, and how to bypass common protection measures.
 
 What is authentication?
 
@@ -26,17 +27,24 @@ For example, authentication determines whether someone attempting to access a we
 Once Carlos123 is authenticated, their permissions determine what they are authorized to do. For example, they may be authorized to access personal information about other users, or perform actions such as deleting another user's account.
 How do authentication vulnerabilities arise?
 
-In many areas of web development, logic flaws cause the website to behave unexpectedly, which may or may not be a security issue. However, as authentication is so critical to security, it's very likely that flawed authentication logic exposes the website to security issues.
+In many areas of web development, logic flaws cause the website to behave unexpectedly, which may or may not be a security issue. However, as authentication is so critical to security, it's very likely that flawed authentication logic exposes
+the website to security issues.
 What is the impact of vulnerable authentication?
 
-The impact of authentication vulnerabilities can be severe. If an attacker bypasses authentication or brute-forces their way into another user's account, they have access to all the data and functionality that the compromised account has. If they are able to compromise a high-privileged account, such as a system administrator, they could take full control over the entire application and potentially gain access to internal infrastructure.
+The impact of authentication vulnerabilities can be severe. If an attacker bypasses authentication or brute-forces their way into another user's account, they have access to all the data and functionality that the compromised account has. If they
+are able to compromise a high-privileged account, such as a system administrator, they could take full control over the entire application and potentially gain access to internal infrastructure.
 
-Even compromising a low-privileged account might still grant an attacker access to data that they otherwise shouldn't have, such as commercially sensitive business information. Even if the account does not have access to any sensitive data, it might still allow the attacker to access additional pages, which provide a further attack surface. Often, high-severity attacks are not possible from publicly accessible pages, but they may be possible from an internal page.
+Even compromising a low-privileged account might still grant an attacker access to data that they otherwise shouldn't have, such as commercially sensitive business information. Even if the account does not have access to any sensitive data, it might
+still allow the attacker to access additional pages, which provide a further attack surface. Often, high-severity attacks are not possible from publicly accessible pages, but they may be possible from an internal page.
 Authentication is the process of verifying the identity of a user, system, or application before granting access to resources. In web applications, authentication ensures that only legitimate users can access protected data and functionality.
 
 When a user logs in to a website, the server must confirm that the user is who they claim to be. This is typically done by checking credentials such as usernames and passwords, tokens, or biometric data.
 
-Authentication is the process of verifying the identity of a user, system, or application before granting access to resources, making it one of the most critical components of web security. It ensures that only legitimate users can access protected data and functionality, and is distinct from authorization, which determines what an authenticated user is allowed to do. Common authentication methods include password-based authentication, multi-factor authentication (MFA), token-based authentication such as JWTs, and OAuth-based login via third-party providers. Despite its importance, authentication is often a weak point in web applications, with vulnerabilities like username enumeration, brute-force attacks, credential stuffing, and broken authentication mechanisms enabling attackers to gain unauthorized access. Secure authentication requires best practices such as hashing and salting passwords, implementing rate-limiting and account lockouts, managing sessions securely with random and HTTPOnly session IDs, and enforcing MFA. Understanding authentication, its common weaknesses, and how to defend against attacks is essential for building secure web applications and for demonstrating expertise in web security for freelancing, bug bounty programs, or internships.
+Authentication is the process of verifying the identity of a user, system, or application before granting access to resources, making it one of the most critical components of web security. It ensures that only legitimate users can access protected data 
+and functionality, and is distinct from authorization, which determines what an authenticated user is allowed to do. Common authentication methods include password-based authentication, multi-factor authentication (MFA), token-based authentication such as
+JWTs, and OAuth-based login via third-party providers. Despite its importance, authentication is often a weak point in web applications, with vulnerabilities like username enumeration, brute-force attacks, credential stuffing, and broken authentication
+mechanisms enabling attackers to gain unauthorized access. Secure authentication requires best practices such as hashing and salting passwords, implementing rate-limiting and account lockouts, managing sessions securely with random and HTTPOnly session IDs,
+and enforcing MFA. Understanding authentication, its common weaknesses, and how to defend against attacks is essential for building secure web applications and for demonstrating expertise in web security for freelancing, bug bounty programs, or internships.
 
 Authentication vulnerabilities are responsible for many real-world breaches.
 
